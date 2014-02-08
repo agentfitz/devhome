@@ -1,5 +1,34 @@
 
-<cfdirectory action="list" directory="/users/brian/Google Drive/www/sites" name="qSites">
+<cfset settings = {
+
+	title: "BFitz's Dev Server",
+	sitesDir: "/users/brian/Google Drive/www/sites",
+	services: [
+		{
+			name: "Github",
+			url: "http://github.com/agentfitz",
+			icon: "fa-github"			
+		},
+		{
+			name: "Stack Overflow",
+			url: "http://stackoverflow.com",
+			icon: "fa-stack-overflow"			
+		},
+		{
+			name: "CF Admin",
+			url: "http://localhost/CFIDE/administrator",
+			icon: "fa-bolt"			
+		}
+	]
+
+}>
+
+
+
+
+
+
+<cfdirectory action="list" directory="#settings.sitesDir#" name="qSites">
 <cfoutput>
 	<html>
 
@@ -15,28 +44,20 @@
 
 		<body>
 
-			<h1>BFitz's Dev Server</h1>
+			<h1>#settings.title#</h1>
 
 			<ul id="serviceList">
 
-				<li>
-					<a href="http://github.com/agentfitz" target="_blank">
-						<i class="fa-github"></i> Github
-					</a>
-				</li>
 
-				<li>
-					<a href="http://stackoverflow.com" target="_blank">
-						<i class="fa-stack-overflow"></i> Stack Overflow
-					</a>
-				</li>
+				<cfloop from="1" to="#arrayLen(settings.services)#" index="i">
+					
+					<li>
+						<a href="#settings.services[i].url#" target="_blank">
+							<i class="#settings.services[i].icon#"></i> #settings.services[i].name#
+						</a>
+					</li>
 
-
-				<li>
-					<a href="http://localhost/CFIDE/administrator" target="_blank">
-						<i class="fa-bolt"></i> CF Admin
-					</a>
-				</li>
+				</cfloop>
 
 			</ul>
 
