@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: "Source Sans Pro", sans-serif;
+	border: 10px solid #75fe04;
+	margin: 0;
+	padding: 20px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+i {
+	font-style: normal;
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+#serviceList, #siteList {
+
+	font-family: FontAwesome;
+	overflow: auto;
+
+	li {
+		float: left;
+		padding: 0 10px 10px 0;
+		width: 25%;
+	}
+
+	li:nth-child(4n){
+		padding-right: 0;
+	}
+
+	a {
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: #efefef;
+		background: #555;
+		text-shadow: 1px 1px 1px #444;
+		display: block;
+		padding: 25px;
+		text-align: center;
+		-webkit-transition: background .3s;
+
+		&:hover {
+			background: #666;
+		}
+	}
+}
+
+#serviceList a {
+
+	background: rgb(112, 112, 190);
+	color: #E4E4FF;
+
+	&:hover {
+		background: lighten(rgb(112, 112, 190), 5%);
+	}
+
+}
+
+
+
+
+
+
